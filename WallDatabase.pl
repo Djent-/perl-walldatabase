@@ -30,9 +30,22 @@ GetOptions ('dbfile=s' => \$DBFILE,
 			'test=s' => \$test);
 
 # Display help
+my $helpdoc = <<ENDHELP;
+Usage: perl WallDatabase.pl 
+	--dbfile [database path]
+	--help
+	--version
+	--add [wallpaper path, tag, tag, ...]
+	--edit [wallpaper path, tag, tag, ...]
+	--get [tag]
+	--random [tag]
+	--createdb
+	--dir [path to wallpaper]
+ENDHELP
+print("$helpdoc\n") if $help;
 
 # Display version
-print("Version 0.0\n") if ($version);
+print("Version 0.1\n") if ($version);
 
 # Setup
 useDatabase();
